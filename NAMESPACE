@@ -3,3 +3,4 @@
 export("%>%")
 export(pull_season_table)
 importFrom(magrittr,"%>%")
+importFrom(rlang,.data)

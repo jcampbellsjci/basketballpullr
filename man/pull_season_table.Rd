@@ -2,21 +2,34 @@
 % Please edit documentation in R/pull_season_table.R
 \name{pull_season_table}
 \alias{pull_season_table}
-\title{Pull season tables}
+\title{Pull player-level statistics for a given season}
 \usage{
 pull_season_table(season, table)
 }
 \arguments{
 \item{season}{Season the stats were collected in.}
 
-\item{table}{Specific statistic table to be pulled.}
-}
-\value{
-A dataframe.
+\item{table}{Specific statistic table to be pulled. This can be any of the
+following:
+\itemize{
+\item \code{"total"}
+\item \code{"per game"}
+\item \code{"per 36 minutes"}
+\item \code{"per 100 possessions"}
+\item \code{"advanced"}
+\item \code{"play-by-play"}
+\item \code{"shooting"}
+\item \code{"adjusted shooting"}
+}}
 }
 \description{
-Pull season tables
+\code{pull_season_table()} pulls different player-level statistics from
+basketball-reference. This data is pulled from the season stats tables on the
+site, an example of which can be seen \href{https://www.basketball-reference.com/leagues/NBA_2023_totals.html}{here}.
+Simply specify the season and stat table you want to pull, and this function
+will pull it and put the table in a tibble.
 }
 \examples{
-pull_season_table(season = 2021, table = "per_game")
+# Pull per game stats for players in the 2021 season
+# pull_season_table(season = 2021, table = "per game")
 }
